@@ -1,0 +1,11 @@
+name: AcShop
+version: ${project.version}
+main: com.mcatk.acshop.AcShop
+authors: [ soto ]
+website: www.mcatk.com
+depend: [Vault]
+commands:
+  as:
+    description: main command
+  asadmin:
+    description: admin command
