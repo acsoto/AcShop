@@ -1,7 +1,6 @@
 package com.mcatk.acshop.command;
 
 import com.mcatk.acshop.AcShop;
-import com.mcatk.acshop.FileOperation;
 import com.mcatk.acshop.Operation;
 import com.mcatk.acshop.ShopGui;
 import com.mcatk.acshop.commodity.Item;
@@ -39,6 +38,7 @@ public class AcShopCommand implements CommandExecutor {
             case "buy":
                 buy();
                 break;
+            default:
         }
         return true;
     }
@@ -81,6 +81,5 @@ public class AcShopCommand implements CommandExecutor {
                 getItemHashMap().get(itemId);
         new Operation().buy((Player) sender, item);
     }
-    
     
 }

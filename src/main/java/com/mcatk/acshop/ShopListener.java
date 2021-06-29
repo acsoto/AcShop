@@ -1,8 +1,6 @@
 package com.mcatk.acshop;
 
 import com.mcatk.acshop.commodity.Item;
-import com.mcatk.acshop.commodity.ItemType;
-import com.mcatk.itemmanager.ItemManager;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

@@ -16,7 +16,6 @@ public class AdminCommand implements CommandExecutor {
     private CommandSender sender;
     private String[] args;
     
-    
     void printHelp() {
         sender.sendMessage("帮助：无设置判错机制，严格按照格式执行");
         sender.sendMessage("上架物品：/asadmin add <item/cmd> <商店ID> <商品ID> <价格> ");
@@ -66,6 +65,7 @@ public class AdminCommand implements CommandExecutor {
             case "cmd":
                 addCmdItem(shopId, itemId, price);
                 break;
+            default:
         }
     }
     

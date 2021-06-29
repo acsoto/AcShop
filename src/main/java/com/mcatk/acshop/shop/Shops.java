@@ -15,5 +15,4 @@ public class Shops {
         return shopsHashMap.get(id1).getItemHashMap().get(id2);
     }
     
-    
 }
