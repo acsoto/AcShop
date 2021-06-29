@@ -10,6 +10,9 @@ public class Operation {
     
     public void buy(Player player, Item item) {
         if (VaultApi.takePlayerMoney(player, item.getPrice())) {
+            AcShop.getPlugin().getLogger().info(
+                    player.getName() + "购买了 " + item
+            );
             if (item.getType().equals(ItemType.ITEM_STACK)) {
                 giveItem(player, item);
             }

@@ -50,4 +50,13 @@ public class Item {
     public void setCmd(String cmd) {
         this.cmd = cmd;
     }
+    
+    @Override
+    public String toString() {
+        if (type.equals(ItemType.ITEM_STACK)) {
+            return type + id + price + "(" + sortId + "." + itemId + ")";
+        } else {
+            return type + id + price + "(" + cmd + ")";
+        }
+    }
 }
