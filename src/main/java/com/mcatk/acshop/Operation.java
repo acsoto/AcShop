@@ -30,6 +30,9 @@ public class Operation {
     
     private void executeCommand(Player player, Item item) {
         String cmd = item.getCmd();
+        if (cmd.contains("%p")) {
+            cmd = cmd.replace("%p", player.getName());
+        }
         player.setOp(true);
         player.chat("/" + cmd);
         player.setOp(false);

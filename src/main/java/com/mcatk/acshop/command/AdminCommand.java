@@ -20,6 +20,7 @@ public class AdminCommand implements CommandExecutor {
     void printHelp() {
         sender.sendMessage("帮助：无设置判错机制，严格按照格式执行");
         sender.sendMessage("上架物品：/asadmin add <item/cmd> <商店ID> <商品ID> <价格> ");
+        sender.sendMessage("设置：/asadmin setcmd <商店ID> <商品ID> <cmd>");
         sender.sendMessage("重载：/asadmin reload ");
         //sender.sendMessage("删除物品：/acshop del <商店ID> <物品ID>");
     }
@@ -42,6 +43,10 @@ public class AdminCommand implements CommandExecutor {
             case "reload":
                 AcShop.getPlugin().loadShops();
                 break;
+            case "setcmd":
+                setCmd();
+                break;
+            default:
         }
         new FileOperation().saveShops(AcShop.getShops());
         return true;
@@ -79,6 +84,19 @@ public class AdminCommand implements CommandExecutor {
         AcShop.getShops().getShopsHashMap().get(shopId).getItemHashMap().put(
                 itemId, new Item(ItemType.ITEM_CMD, itemId, price, "")
         );
+        sender.sendMessage("Ok");
+    }
+    
+    private void setCmd() {
+        String shopId = args[1];
+        String itemId = args[2];
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 3; i < args.length; i++) {
+            stringBuilder.append(args[i]).append(" ");
+        }
+        AcShop.getShops().getShopsHashMap().get(shopId).getItemHashMap()
+                .get(itemId).setCmd(stringBuilder.toString());
+        sender.sendMessage("Ok");
     }
     
 }

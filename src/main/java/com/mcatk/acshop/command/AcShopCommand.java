@@ -80,7 +80,6 @@ public class AcShopCommand implements CommandExecutor {
         Item item = AcShop.getShops().getShopsHashMap().get(shopId).
                 getItemHashMap().get(itemId);
         new Operation().buy((Player) sender, item);
-        sender.sendMessage("购买成功");
     }
     
     
