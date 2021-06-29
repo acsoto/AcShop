@@ -33,8 +33,12 @@ public class Operation {
         if (cmd.contains("%p")) {
             cmd = cmd.replace("%p", player.getName());
         }
-        player.setOp(true);
-        player.chat("/" + cmd);
-        player.setOp(false);
+        if (!player.isOp()){
+            player.setOp(true);
+            player.chat("/" + cmd);
+            player.setOp(false);
+        }else {
+            player.chat("/" + cmd);
+        }
     }
 }
