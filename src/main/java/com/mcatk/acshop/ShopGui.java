@@ -54,7 +54,9 @@ public class ShopGui {
     }
     
     private ItemStack getIconWithCmdItem(Item item) {
-        return null;
+        ItemStack icon = new ItemStack(Material.REDSTONE, 1);
+        addPriceLore(icon, item.getId(), item.getPrice());
+        return icon;
     }
     
     private void addPriceLore(ItemStack icon, String id, int price) {
